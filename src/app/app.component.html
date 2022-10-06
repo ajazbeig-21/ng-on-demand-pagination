@@ -1,0 +1,53 @@
+<div class="d-flex  flex-column">
+
+<div class="container mt-5">
+  <h2 class="text-light bg-primary m-5">Angular On Demand Pagination</h2>
+<table class="table table-striped">
+  <thead>
+    <tr >
+      <th scope="col">Passenger Name</th>
+      <th scope="col">Total Trips</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of passengerData">
+      <th scope="row">{{item.name}}</th>
+      <td>{{item.trips}}</td>
+    </tr>
+
+   
+  </tbody>
+</table>
+
+
+</div>
+
+<div class="container ">
+  <ul class="pagination pagination-md justify-content-center "
+  >
+    <li class="page-item"  
+    
+    [ngClass]="{disabled: passengerDataLength <1 || disablePrev==true}"
+    ><a  (click)="passengerDataLength <1?null:prevPage()"  class="page-link " aria-label="Previous">Previous</a></li>
+
+    <li class="page-item "
+    ><a class="page-link" >{{currentCounter-1}}</a></li>
+
+    <li class="page-item active "
+    ><a class="page-link " href="#">{{currentCounter}}</a></li>
+
+    <li class="page-item "
+    ><a class="page-link" href="#">{{currentCounter+1}}</a></li>
+
+    <li class="page-item "
+    [ngClass]="{disabled: passengerDataLength <1 || disableNext==true}"
+    ><a 
+      (click)="passengerDataLength <1?null:nextPage()"
+      class="page-link" aria-label="Next">Next</a></li>
+
+  </ul>
+</div>
+
+</div>
+
+<router-outlet></router-outlet>
