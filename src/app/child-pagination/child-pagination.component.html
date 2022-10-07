@@ -1,0 +1,46 @@
+<div class="d-flex  flex-column">
+ 
+  <!-- 
+
+    Used Variables
+    ---------------
+    passengerDataLength
+    disablePrev
+    currentCounter
+
+    Methods
+    --------
+    prevPage()
+    nextPage()
+   -->
+  
+  <div class="container ">
+    <ul class=" pagination pagination-md justify-content-center "
+    >
+      <li class="page-item"  
+      
+      [ngClass]="{disabled: passengerDataLength <1 || disablePrev==true}"
+      ><a  (click)="passengerDataLength <1?null:prevPage()"  class="page-link " aria-label="Previous">Previous</a></li>
+  
+      <li class="page-item "
+      ><a class="page-link" >{{currentCounterChild-1}}</a></li>
+  
+      <li class="page-item active "
+      ><a class="page-link " href="#">{{currentCounterChild}}</a></li>
+  
+      <li class="page-item "
+      ><a class="page-link" href="#">{{currentCounterChild+1}}</a></li>
+  
+      <li class="page-item "
+      [ngClass]="{disabled: passengerDataLength <1 || disableNext==true}"
+      ><a 
+        (click)="passengerDataLength <1?null:nextPage()"
+        class="page-link" aria-label="Next">Next</a></li>
+
+  
+      </ul>
+  </div>
+  
+  </div>
+  
+  
