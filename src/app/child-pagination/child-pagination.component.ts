@@ -41,7 +41,7 @@ this.currentCounter.emit(this.currentCounterChild);
     } else {
       this.disablePrev = false;
       this.currentCounter.emit(this.currentCounterChild+=1);
-      this.callApi(this.currentCounterChild, 10);
+     // this.callApi(this.currentCounterChild, 10);
     }
   }
 
@@ -49,8 +49,9 @@ this.currentCounter.emit(this.currentCounterChild);
     if (this.currentCounterChild > 1) {
       this.disableNext = false;
       this.currentCounter.emit(this.currentCounterChild -= 1);
-      this.callApi(this.currentCounterChild, 10);
-    } else this.disablePrev = true;
+      //this.callApi(this.currentCounterChild, 10);
+    } else if(this.currentCounterChild==1)
+    {this.disablePrev = true;}
   }
 }
 

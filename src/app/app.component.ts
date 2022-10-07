@@ -24,8 +24,8 @@ export class AppComponent implements OnInit {
   }
   ngOnInit() {
     this.callApi(this.currentCounterPar, 10);
-    if (this.passengerDataLengthPar == 10 && this.currentCounterPar == 1) {
-      this.disableNextPar = true;
+    if (this.currentCounterPar == 1) {
+      this.disableNextPar = false;
       this.disablePrevPar = true;
     }
 }
